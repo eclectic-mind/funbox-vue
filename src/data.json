@@ -1,0 +1,34 @@
+{
+  "goods": [
+    {
+      "id": "001",
+      "ingredient": "с фуа-гра",
+      "portions": "10",
+      "mouses": "1",
+      "weight": "0.5",
+      "comment": "",
+      "description": "Печень утки разварная с артишоками",
+      "available": "0"
+    },
+    {
+      "id": "002",
+      "ingredient": "с рыбой",
+      "portions": "40",
+      "mouses": "2",
+      "weight": "2",
+      "comment": "",
+      "description": "Головы щучьи с чесноком да свежайшая сёмгушка",
+      "available": "3"
+    },
+    {
+      "id": "003",
+      "ingredient": "с курой",
+      "portions": "100",
+      "mouses": "5",
+      "weight": "5",
+      "comment": "заказчик доволен",
+      "description": "Филе из цыплят с трюфелями в бульоне",
+      "available": "10"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+:root {
+  --default-color: #1698d9;
+  --selected-color: #d91667;
+  --disabled-color: #b3b3b3;
+  --font-color: #666666;
+  --disabled-accent-color: #ffff66;
+}
+
+@font-face {
+  font-family: "Exo_2_0_Thin";
+  src: url("../assets/fonts/Exo_2_0_Thin.eot");
+  src: local("../assets/fonts/Exo_2_0_Thin"), local("Exo_2_0_Thin"),
+    url("../assets/fonts/Exo_2_0_Thin.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/Exo_2_0_Thin.woff2") format("woff2"),
+    url("../assets/fonts/Exo_2_0_Thin.woff") format("woff"),
+    url("../assets/fonts/Exo_2_0_Thin.ttf") format("truetype"),
+    url("../assets/fonts/Exo_2_0_Thin.svg#Exo_2_0_Thin") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--font-color);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+html,
+body,
+main,
+div,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/img/bg-pattern.gif");
+  background-repeat: repeat;
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
+  padding: 20px 30px;
+}
+
+.container {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 12px;
+  width: 322px;
+  height: 480px;
+  position: relative;
+}
+
+.inner {
+  border-radius: 12px;
+  width: 100%;
+  height: 480px;
+  clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px);
+  background-color: #ffffff;
+  background-image: url("../assets/img/cat.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  position: relative;
+  border-width: 4px 4px 4px 4px;
+  border-color: var(--default-color);
+  border-style: solid;
+  padding-left: 43px;
+}
+
+.content {
+  width: 100%;
+  font-size: 14px;
+  position: relative;
+}
+
+.inner::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: -14px;
+  height: 5px;
+  width: 66px;
+  transform: rotate(-45deg);
+  background-color: var(--default-color);
+}
+
+.description {
+  display: block;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.description a {
+  color: var(--default-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0;
+  line-height: 13px;
+  border-bottom: dashed 1px var(--default-color);
+}
+
+h2 {
+  font-size: 36px;
+  color: #ffffff;
+  margin: 0 0 30px 0;
+  font-family: "Exo_2_0_Thin", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
+
+h3,
+h4 {
+  color: #000000;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 48px;
+  margin-top: 14px;
+}
+
+h4 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.pre-name {
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.details {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.details span {
+  display: block;
+  clear: both;
+}
+
+.weight {
+  display: block;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  background-color: var(--default-color);
+  border-radius: 50%;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  color: #ffffff;
+  font-size: 21px;
+}
+
+.weight big {
+  font-size: 42px;
+  color: #ffffff;
+  display: block;
+  clear: both;
+  line-height: 32px;
+  margin-top: 15px;
+}
+
+.selected .inner {
+  border-color: var(--selected-color);
+}
+.selected .inner::before {
+  background-color: var(--selected-color);
+}
+
+.disabled .inner {
+  background-image: url("../assets/img/cat-transp.png");
+  border-color: var(--disabled-color);
+}
+.disabled .inner::before {
+  background-color: var(--disabled-color);
+}
+
+.disabled .description {
+  color: var(--disabled-accent-color);
+}
+
+.disabled .content {
+  opacity: 0.4;
+}
+
+.disabled .weight {
+  background-color: var(--disabled-color);
+}
+
+.selected .weight {
+  background-color: var(--selected-color);
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    gap: 50px;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .card {
+    max-width: 100%;
+    transform: scale(0.85);
+  }
+}
