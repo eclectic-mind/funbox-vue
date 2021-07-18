@@ -111,13 +111,14 @@ p {
   margin-bottom: 20px;
 }
 
-.description a {
+.buy {
   color: var(--default-color);
   text-decoration: none;
   font-weight: bold;
   padding: 0;
   line-height: 13px;
   border-bottom: dashed 1px var(--default-color);
+  cursor: pointer;
 }
 
 h2 {
@@ -182,6 +183,10 @@ h4 {
   clear: both;
   line-height: 32px;
   margin-top: 15px;
+}
+
+.card:not(.disabled) {
+  cursor: pointer;
 }
 
 .selected .inner {
